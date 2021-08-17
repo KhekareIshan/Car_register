@@ -1,0 +1,59 @@
+<html>
+<title>Car-Register</title>
+<body onload=myfunction(0)>
+  <style>
+    body {
+      background-color: #b3e0ff;
+    }
+    </style>
+<center>
+<font size="7" color="#ffff00" face="algerian">Anish Ishan Showroom</font>
+<br>
+<font size="5" color="#ff0066" face="magneto">Car Register</font>
+<hr>
+<h3><u><b><i>
+<p id="Carname">car name:</p>
+<p id="model">car model:</p>
+<p id="price">car price:</p>
+<img id="myimage" src="" style="width: 550px; height: 300px;">
+</h3></u></b></i>
+<script> 
+var outerArrayCount =  0 
+var carName =
+[["alfa romeo", "4c", "1,50,00,000","alfa.jpg"],
+["aston martin", "db 11", "2,90,00,000", "aston.jpg"],
+["audi","r8 etron","1,50,00,000","audi1.jpg"],
+["bentley","continental GT","2,00,00,000","bentley.jpg"],
+["bmw","i8","1,00,00,000","bmw1.jpg"],
+["buggati","chiron","5,00,00,000","bugatti.jpg"],
+["cadillac","ct5","52,30,000","cadillac.jpg"],
+["dodge","challenger","70,00,000","dodge.jpg"],
+["ferrari","laferrari","2,00,00,000","ferrari.jpg"],
+["jeep","grand cherokee","1,00,00,000","jeep.jpg"],
+["lamborghini","hurecan","3,00,00,000","lamborghini2.jpg"],
+["maserati", "granturismo", "3,00,00,000", "maserati.jpg"],
+["mcLaren","570s spider","3,75,00,000","maclaren.jpg"],
+["mercedes","sls amg","4,00,00,000","mercedes.jpg"],
+["porsche", "boxter", "1,00,00,000","porsche.jpg"],
+["rolls royce","phantom","8,00,00,000","rolls.jpg"],
+["Tesla", "Model S", "1,50,00,000", "tesla.jpg"]]
+var innerArrayCount = carName.length
+function myfunction(count){
+
+document.getElementById("previous").disabled=(outerArrayCount <= 0)
+    document.getElementById("next").disabled=(outerArrayCount >= (carName.length-1))
+const element = carName[outerArrayCount];
+    document.getElementById("Carname").innerHTML =element[0];
+    document.getElementById("model").innerHTML =element[1];
+    document.getElementById("price").innerHTML =element[2];
+    document.getElementById("myimage").src =element[3];
+}
+
+
+</script>
+<hr>
+<button id='previous' type="button" style= "width:100px; background-color: #00000000; border: none; height:50px" onclick=myfunction(outerArrayCount--) ><h3>previous</h3></button>
+<button id='next' type="button" style= "width:100px; background-color: #00000000; border: none; height:50px" onclick=myfunction(outerArrayCount++)><h3>next</h3></button> 
+</center>
+</body>
+</html>
